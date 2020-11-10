@@ -7,37 +7,33 @@ import React from "react";
 // };
 
 const Square = () => {
-	return (
-		<div
-			style={{
-				backgroundColor: "gold",
-				margin: 10,
-				padding: 20
-			}}
-		>
-			Square
-		</div>
-	);
+	return <div className="square">X</div>;
 };
 
 const Board = () => {
+	const renderSquare = () => {
+		return <Square />;
+	};
+
 	return (
 		<div style={{ backgroundColor: "skyblue", margin: 10, padding: 20 }}>
 			Board
-			<Square />
+			<div className="board-row">
+				{renderSquare()} {renderSquare()} {renderSquare()}
+			</div>
+			<div className="board-row">
+				{renderSquare()} {renderSquare()} {renderSquare()}
+			</div>
+			<div className="board-row">
+				{renderSquare()} {renderSquare()} {renderSquare()}
+			</div>
 		</div>
 	);
 };
 
 const Game = () => {
 	return (
-		<div
-			style={{
-				backgroundColor: "salmon",
-				margin: 10,
-				padding: 20
-			}}
-		>
+		<div className="game">
 			Game
 			<Board />
 		</div>
