@@ -37,6 +37,13 @@ const Board = () => {
 		//squares[i] = 'X';
 
 		const newSquares = [...squares];
+
+		const winnerDeclared = Boolean(calculateWinner(newSquares));
+		const squareFilled = Boolean(newSquares[i]);
+		if (winnerDeclared || squareFilled) {
+			return;
+		}
+
 		newSquares[i] = xIsNext ? "X" : "O";
 		setSquares(newSquares);
 		setXIsNext(!xIsNext);
