@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // const gameStyles = {
 // 	backgroundColor: "salmon",
@@ -7,12 +7,18 @@ import React from "react";
 // };
 
 const Square = props => {
-	return <div className="square">{props.value}</div>;
+	const [value, setValue] = useState(null);
+
+	return (
+		<button className="square" onClick={() => setValue("X")}>
+			{value}
+		</button>
+	);
 };
 
 const Board = () => {
 	const renderSquare = i => {
-		return <Square value={i} />;
+		return <Square />;
 	};
 
 	return (
